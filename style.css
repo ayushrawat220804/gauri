@@ -1,0 +1,805 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background-color: transparent;
+}
+
+/* Video Background */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Added missing semicolon */
+    z-index: -1;
+    overflow: hidden;
+    background: none;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for better text readability */
+    z-index: 1;
+}
+
+/* Navigation Bar */
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 20px;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ff7eb3;
+}
+
+/* Content Overlay */
+.content-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Main Heading */
+.content h1 {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.content h1 span {
+    color: #ff7eb3;
+    font-size: 3.5rem;
+}
+
+.content p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+/* Feature Boxes Grid */
+.features-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow wrapping of boxes in smaller screens */
+}
+
+/* Individual Feature Box */
+.feature-box {
+    width: 250px;
+    height: 150px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.feature-box:hover {
+    background: linear-gradient(135deg, #ff9fc3, #ff97a5);
+    transform: scale(1.05);
+}
+
+.feature-box a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .features-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navigation a {
+        font-size: 1rem;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content h1 span {
+        font-size: 2.5rem;
+    }
+}
+
+
+/*gallery*/
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c); /* Birthday-themed background */
+    color: #fff;
+}
+
+/* Navigation Bar */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: #fbd1e0;
+}
+
+/* Gallery Section */
+.gallery-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.gallery-container h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-container p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Gallery Grid */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Individual Photo Frames */
+.photo-frame {
+    width: 200px;
+    height: 250px;
+    background: #fff; /* White background for frame */
+    border: 3px solid #d9b3c9; /* Light pink border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    transform: rotate(-3deg); /* Slight tilt for hanging effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Alternating Tilt for Frames */
+.photo-frame:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.photo-frame:hover {
+    transform: rotate(0); /* Straighten on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hanging Rope Effect */
+.photo-frame::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background-color: #fff; /* Rope color */
+}
+
+.photo-frame::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background-color: #ffe5f1; /* Nail color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-container h1 {
+        font-size: 2rem;
+    }
+
+    .photo-frame {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+
+
+/*quiz*/
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 20px;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ff7eb3;
+}
+
+/* Quiz Page Styles */
+.quiz-container {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 80px;
+}
+
+.quiz-container h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.quiz-container p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: white;
+}
+
+/* Quiz Form */
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.quiz-form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.quiz-form input[type="text"], .quiz-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.quiz-form button {
+    padding: 15px;
+    background-color: #ff7eb3;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.quiz-form button:hover {
+    background-color: #ff9fc3;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .quiz-container h1 {
+        font-size: 2rem;
+    }
+
+    .quiz-form {
+        width: 90%;
+    }
+
+    .quiz-form label {
+        font-size: 1rem;
+    }
+
+    .quiz-form input, .quiz-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .quiz-form button {
+        font-size: 1rem;
+    }
+}
+
+
+
+/*card*/
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 20px;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ff7eb3;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Card */
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff7eb3;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: transform 0.6s;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #ff9fc3, #ff97a5);
+    transform: rotateY(180deg);
+}
+
+.card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+/* Card Buttons */
+.card-buttons {
+    text-align: center;
+}
+
+.card-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff7eb3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.card-buttons button:hover {
+    background-color: #ff9fc3;
+}
+
+.another-card {
+    margin-top: 10px;
+    background-color: #ff758c;
+}
+
+.another-card:hover {
+    background-color: #ff9fc3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-image {
+    width: 739px;
+    height: 531px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ff7eb3;
+}
+
+.close-btn:hover {
+    color: #ff758c;
+}
+
+
+
+
+
+/*about*/
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c); /* Matches existing theme */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 20px;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ff9fc3;
+}
+
+/* Main Content */
+.about {
+    padding: 100px 20px; /* Push content below navigation */
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffebef;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ffebef;
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left; /* Align questions to the left */
+    background: rgba(255, 255, 255, 0.1); /* Slightly translucent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #ffebef;
+}
+
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+form textarea:focus {
+    outline: 2px solid #ff9fc3;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #ff7eb3;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff9fc3;
+}
+
+/* Response Display */
+#responseDisplay {
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1); /* Same as form background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #ffebef;
+}
+
+#responseDisplay h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffebef;
+}
+
+#responseDisplay p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}

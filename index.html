@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srishti's Birthday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="videos/Background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Dark Overlay -->
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navigation">
+        <nav>
+            <ul>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content Overlay -->
+    <div class="content-overlay">
+        <!-- Main Content -->
+        <div class="birthday-container">
+            <main class="content">
+                <h1>HAPPY <br><span>BIRTHDAY</span></h1>
+                <p> Another year with new surprise with new excitement with new blessings.</p>
+
+                <!-- Feature Boxes -->
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <a href="gallery.html" class="feature-box">Photo Gallery</a>
+                    </div>
+                    <div class="feature-box">
+                        <a href="quiz.html" class="feature-box">Quiz</a>
+                    </div>
+                    <div class="feature-box">
+                        <a href="card.html" class="feature-box">Card</a>
+                    </div>
+                    <div class="feature-box">
+                        <a href="video.html" class="feature-box">Video</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            &copy; 2024 | Made with ❤️ by Gauri
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.style.background = "none";
+            document.getElementById("background-video").style.background = "none";
+        });
+        
+    </script>
+</body>
+</html>

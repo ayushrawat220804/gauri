@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navigation">
+        <div class="logo">+ Srishti's Birthday</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Photos</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="card.html">Card</a></li>
+                <li><a href="video.html">Video</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="about">
+        <h1>About Me!</h1>
+        <p>Answer the following questions about me!</p>
+        <form id="aboutForm">
+            <label for="like">5 things you like about me?</label>
+            <textarea id="like" placeholder="Answer" rows="4" required></textarea>
+            
+            <label for="ILike">4 things that I like?</label>
+            <textarea id="ILike" placeholder="Answer" rows="4" required></textarea>
+            
+            <label for="looks">3 things I look good in?</label>
+            <textarea id="looks" placeholder="Answer" rows="3" required></textarea>
+
+            <label for="hate">2 things you hate about me?</label>
+            <textarea id="hate" placeholder="Answer" rows="2" required></textarea>
+            
+            <label for="ALot">1 thing I say a lot?</label>
+            <textarea id="ALot" placeholder="Answer" rows="1" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        
+        <div id="responseDisplay" style="display: none;">
+            <h2>Thank you for your response!</h2>
+            <p><strong>Like about me:</strong> <span id="displayLikeAboutMe"></span></p>
+            <p><strong>I like:</strong> <span id="displayILike"></span></p>
+            <p><strong>I look good in:</strong> <span id="displayLookGoodIn"></span></p>
+            <p><strong>Hate:</strong> <span id="displayHate"></span></p>
+            <p><strong>Say A lot:</strong> <span id="displaySayAlot"></span></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2024 | Made with ❤️ by Gauri
+    </footer>
+
+    <script>
+        // JavaScript for handling form submission
+        const form = document.getElementById('aboutForm');
+        const responseDisplay = document.getElementById('responseDisplay');
+        const displayLikeAboutMe = document.getElementById('displayLikeAboutMe');
+        const displayILike = document.getElementById('displayILike');
+        const displayLookGoodIn = document.getElementById('displayLookGoodIn');
+        const displayHate = document.getElementById('displayHate');
+        const displaySayAlot = document.getElementById('displaySayAlot');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent page reload
+
+            // Get user inputs
+            const like = document.getElementById('like').value;
+            const ILike = document.getElementById('ILike').value;
+            const looks = document.getElementById('looks').value;
+            const hate = document.getElementById('hate').value;
+            const ALot = document.getElementById('ALot').value;
+
+            // Display the responses
+            displayLikeAboutMe.textContent = like;
+            displayILike.textContent = ILike;
+            displayLookGoodIn.textContent = looks;
+            displayHate.textContent = hate;
+            displaySayAlot.textContent = ALot;
+
+            // Hide the form and show the response display
+            form.style.display = 'none';
+            responseDisplay.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
